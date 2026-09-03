@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess The Number</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 200px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    button {
+      padding: 12px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #444;
+    }
+
+    #result {
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    #remainingAttempts {
+      color: #cc0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Guess The Number</h1>
+  <input type="number" id="input" /><button onclick="guessNum()" id="guessbtn">
+    Make a Guess
+  </button>
+  <button onclick="restartGame()">Restart Game</button>
+  <h3>Result: <span id="result">---</span></h3>
+  <h3>Remaining Attempts: <span id="remainingAttempts">5</span></h3>
+
+  <script>
+    let randomNum = Math.floor(Math.random() * 100) + 1;
+    let remainingAttemptsCount = 5;
+
+    console.log("Random Number:", randomNum);
+    console.log("Initial Attempts:", remainingAttemptsCount);
+    function guessNum() {
+      let guessedNum = Number(document.getElementById("input").value);
+      let result = document.getElementById("result");
+
+      console.log("Guessed Number:", guessedNum);
+      console.log("Random Number:", randomNum);
+      console.log("Attempts Before:", remainingAttemptsCount);
+
+      if (guessedNum < 1 || guessedNum > 100) {
+        result.innerText = "Please enter number in range of 1 to 100";
+        result.style.color = "red";
+        return;
+      }
+
+      let remainingAttempts = document.getElementById("remainingAttempts");
+
+      let secretNum = randomNum;
+
+      if (remainingAttemptsCount > 0) {
+
+        if (guessedNum > secretNum) {
+
+          result.innerText = "Too High!!!!";
+
+        } else if (guessedNum < secretNum) {
+
+          result.innerText = "Too Low!!!!";
+
+        } else {
+
+          result.innerText = "You Guessed the Correct Number!!!!";
+
+          console.log("Correct Number");
+          console.log("Game Won");
+          
+
+        }
+
+
+        remainingAttemptsCount--;
+
+        console.log("Attempts After Decrement:", remainingAttemptsCount);
+
+        remainingAttempts.innerText = remainingAttemptsCount;
+       
+      }
+       if (remainingAttemptsCount ===0 && guessedNum != secretNum) {
+
+          result.innerText =
+            "Game Over!!!! Secret Number was: " + secretNum;
+
+          console.log("Game Over");
+
+           document.getElementById("guessbtn").style.display="none"
+         
+        
+      }
+    }
+    function restartGame() {
+      randomNum = Math.floor(Math.random() * 100) + 1;
+
+      document.getElementById("input").value = "";
+      remainingAttemptsCount = 5;
+      document.getElementById("remainingAttempts").innerText =
+        remainingAttemptsCount;
+      document.getElementById("result").innerText = "---";
+       document.getElementById("guessbtn").style.display=""
+    }
+  </script>
+</body>
+
+</html>

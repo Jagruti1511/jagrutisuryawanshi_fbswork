@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">Red</button>
+     
+      <button class="btn">Green</button>
+      <button class="btn">Blue</button>
+
+      <script>
+        let button=document.querySelectorAll(".btn")
+
+        // button.forEach(function(ele){
+        //     ele.addEventListener("click",function(){
+        //         document.querySelector("body").style.backgroundColor=ele.innertext
+        //     })
+        // })
+
+        button[0].addEventListener("click", function(){
+            document.querySelector("body").style.backgroundColor="Red"
+        })
+         button[1].addEventListener("click", function(){
+            document.querySelector("body").style.backgroundColor="Green"
+        })
+         button[2].addEventListener("click", function(){
+            document.querySelector("body").style.backgroundColor="Blue"
+        })
+
+      </script>
+</body>
+</html>

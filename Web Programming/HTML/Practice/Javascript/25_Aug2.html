@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Details</title>
+</head>
+
+<body>
+
+    <h1>Student Details</h1>
+
+    <button>Show Student Details</button>
+
+    <span id="studentDetails"></span>
+
+    <script>
+
+        let students = [
+            {
+                name: "Jagruti",
+                age: 21,
+                position: "Java"
+            },
+            {
+                name: "Priya",
+                age: 21,
+                position: "Python"
+            },
+            {
+                name: "Amit",
+                age: 20,
+                position: "JavaScript"
+            },
+            {
+                name: "Sarthak",
+                age: 19,
+                position: "C++"
+            },
+            {
+                name: "Pragati",
+                age: 16,
+                position: "Java"
+            },
+            {
+                name: "Sumit",
+                age: 23,
+                position: "Python"
+            },
+            {
+                name: "Rushi",
+                age: 22,
+                position: "JavaScript"
+            },
+            {
+                name: "Samarth",
+                age: 18,
+                position: "Java"
+            },
+            {
+                name: "Dhiraj",
+                age: 20,
+                position: "C"
+            },
+            {
+                name: "Sagar",
+                age: 22,
+                position: "Python"
+            }
+        ];
+
+        let detail = document.getElementById("studentDetails");
+
+        document.querySelector("button").addEventListener("click", function () {
+
+            let table = `<table border="1">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                </tr>`;
+
+            students.forEach(function (ele) {
+
+                table += `
+                    <tr>
+                        <td>${ele.name}</td>
+                        <td>${ele.age}</td>
+                        <td>${ele.position}</td>
+                    </tr>`;
+
+            });
+
+            table += `</table>`;
+
+            detail.innerHTML = table;
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Player Details</h1>
+    <button>Show Player Details</button>
+    <h2 id="name"></h2>
+    <h2 id="age"></h2>
+     <h2 id="module"></h2>
+
+     <script>
+        let player={
+            name:"Virat",
+            age:"30",
+            module:"Cricket"
+        }
+        player.age=35;
+
+        document.querySelector("button").addEventListener("click",function(){
+            document.getElementById("name").innerText="Plater Name:"+player.name
+            document.getElementById("age").innerText="Platerage"+player.age
+            document.getElementById("module").innerText="Plater module:"+player.module
+        })
+     </script>
+</body>
+</html>

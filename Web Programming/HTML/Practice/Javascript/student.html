@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eef5fb;
+            padding: 40px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        h2 {
+            text-align: center;
+            color:black;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 25px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 11px 24px;
+            background-color: #0975db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #6bb4f8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th {
+            background-color: #022341;
+            color: white;
+            padding: 13px;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            color: #344054;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f7faff;
+        }
+
+        tbody tr:hover {
+            background-color: #e8f2fb;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Student Details</h2>
+
+        <p class="subtitle">
+            Click the button to view all students
+        </p>
+
+        <button id="showBtn">Show All Students</button>
+
+        <table id="studentTableContainer" style="display: none;">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <script>
+
+        async function getData() {
+
+            let response = await fetch(
+                "https://jsonplaceholder.typicode.com/users"
+            );
+
+            let data = await response.json();
+
+            console.log(data);
+
+            let table = document.getElementById("studentTable");
+
+            data.map(function(student) {
+
+                let row = `
+                    <tr>
+                        <td>${student.id}</td>
+                        <td>${student.name}</td>
+                        <td>${student.username}</td>
+                        <td>${student.email}</td>
+                        <td>${student.address.city}</td>
+                    </tr>
+                `;
+
+                table.innerHTML += row;
+            });
+
+            document.getElementById("studentTableContainer").style.display = "table";
+        }
+
+
+        let button = document.getElementById("showBtn");
+
+        button.addEventListener("click", getData);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Fail</title>
+</head>
+<body>
+
+    <h1>Check Result</h1>
+
+    <input type="number" id="input" placeholder="Enter Marks">
+
+    <button onclick="checkResult()">Check Result</button>
+
+    <h1 id="response"></h1>
+
+    <script>
+        function checkResult(){
+            let marks = Number(document.getElementById("input").value)
+            let res = document.getElementById("response")
+
+            if(marks >= 35){
+                res.innerText = "You are Pass!!!"
+                res.style.color = "green"
+            }
+            else{
+                res.innerText = "You are Fail!!!"
+                res.style.color = "red"
+            }
+        }
+    </script>
+
+</body>
+</html>
