@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+</head>
+
+<body>
+
+    <h1>Employee Management System</h1>
+
+    <!-- ================= ADD EMPLOYEE ================= -->
+
+    http://localhost:8080/DemoFebServlet/getallemployees
+    <!-- ================= SEARCH EMPLOYEE ================= -->
+
+    <h2>Search Employee</h2>
+
+    <form action="/DemoFebServlet/getemployeebyid" method="get">
+
+        <label>Enter Employee ID:</label>
+
+        <input type="number" name="id" required>
+
+        <button type="submit">Search</button>
+
+    </form>
+
+
+    <hr>
+
+
+    <!-- ================= DISPLAY EMPLOYEES ================= -->
+
+    <h2>Display All Employees</h2>
+
+    <form action="/DemoFebServlet/getallemployees" method="get">
+
+        <button type="submit">Get All Employees</button>
+
+    </form>
+
+</body>
+</html>

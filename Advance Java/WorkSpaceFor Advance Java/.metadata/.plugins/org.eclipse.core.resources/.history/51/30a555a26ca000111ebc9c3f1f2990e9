@@ -1,0 +1,55 @@
+package demo;
+
+import java.io.IOException;
+
+import demo.model.Employee;
+import demo.service.EmployeeService;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/addemployee")
+public class AddEmployeeServlet extends HttpServlet{
+	
+	EmployeeService empService=new EmployeeService();
+	
+	@Override
+	public void init() throws ServletException {
+		System.out.println("Servlet ka object bana");
+		super.init();
+	}
+	
+	@Override
+	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
+		System.out.println("Service ko call mila");
+		super.service(arg0, arg1);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
+         int id =Integer.parseInt( req.getParameter("id") );
+         
+  
+         String name = req.getParameter("name");
+
+        
+         double salary = Double.parseDouble(req.getParameter("salary"));
+
+         Employee emp=new Employee(id,name,salary);
+         
+         empService.addEmployee(emp);
+         
+         System.out.println("Employee added successfully");
+     
+
+	}
+
+	@Override
+	public void destroy() {
+		System.out.println("Object destroy hua");
+		super.destroy();
+	}
+}

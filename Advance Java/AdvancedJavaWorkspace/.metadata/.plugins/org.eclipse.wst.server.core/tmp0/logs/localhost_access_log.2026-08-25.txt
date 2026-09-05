@@ -1,0 +1,16 @@
+127.0.0.1 - - [25/Aug/2026:06:50:00 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [25/Aug/2026:09:17:04 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [25/Aug/2026:09:18:53 +0530] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [25/Aug/2026:09:19:24 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:19:24 +0530] "GET /DemoFebServlet/WEB-INF/classes/demo/view/EmployeeView.java HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:19:24 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:21:17 +0530] "GET /DemoFebServlet/getallemployees HTTP/1.1" 404 786
+127.0.0.1 - - [25/Aug/2026:09:41:15 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:41:15 +0530] "GET /StudentCollegePortal/index.html HTTP/1.1" 200 1688
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:41:15 +0530] "GET /StudentCollegePortal/css/style.css HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:46:11 +0530] "GET /DemoFebServlet/employee.html HTTP/1.1" 200 1457
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:09:46:45 +0530] "POST /DemoFebServlet/addemployee HTTP/1.1" 404 782
+127.0.0.1 - - [25/Aug/2026:13:27:50 +0530] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:13:28:14 +0530] "GET /DemoFebServlet/employee.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:13:28:14 +0530] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [25/Aug/2026:13:28:46 +0530] "POST /DemoFebServlet/addemployee HTTP/1.1" 404 782
