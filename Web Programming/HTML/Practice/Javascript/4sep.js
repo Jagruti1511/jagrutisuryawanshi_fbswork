@@ -27,11 +27,11 @@ let students=[{
     age:21,
     city:"Pune"
 },{
-     name:"Rushi",
+     name:"Pragati",
     age:22,
     city:"Pune"
 },{
-     name:"Dhiraj",
+     name:"Shruti",
     age:21,
     city:"Pune"
 }]
